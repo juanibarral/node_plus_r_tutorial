@@ -1,4 +1,6 @@
+
 var rio = require("rio")
+
 
 var settings = {
 	host : "127.0.0.1",

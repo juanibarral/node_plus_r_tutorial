@@ -1,10 +1,16 @@
+
 require(RJSONIO)
 
-getHistogram <- function(raw_data){
-	d <- fromJSON(raw_data)
-	h <- hist(d)
+clusterData <- function(raw_data){
+	mydata <- fromJSON(raw_data)
+
+	mydata <- scale(mydata)
+	fit <- kmeans(mydata, 4)
+	aggregate(mydata,by=list(fit$cluster),FUN=mean)
+	mydata <- data.frame(mydata, fit$cluster)
 
 	res <- list(
-		"histogram" = h)
+		"clustered_data" = mydata
+		)
 	return(toJSON(res))
 }

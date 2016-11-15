@@ -5,13 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>Mi Proyecto</title>
+		<link rel="stylesheet" type="text/css" href="css/c3.min.css">
+		<script src="js/bundle.js"></script>
 	</head>
 	<body>
 		Hola!
-		<form id="my_form" method="get" action="/get_data">
-			
-		</form>
-		<button type="submit" form="my_form"> Click me!</button>
-		
+		<button type="button" onclick="my_client.getData()"> get data</button>
+		<button type="button" onclick="my_client.clusterData()"> cluster data</button>
+		<div id="my_chart" style="overflow : scroll;"></div>
 	</body>
 </html>
